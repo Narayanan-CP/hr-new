@@ -1,7 +1,7 @@
 import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
 import { getLeaves, getSalaries, getTasks } from '../utils/mockData';
-import { CalendarDays, CircleAlert, CircleCheck, CircleX, ClipboardList, Clock, DollarSign } from 'lucide-react';
+import { CalendarDays, CircleAlert, CircleCheck, ClipboardList, Clock, DollarSign } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Dashboard = () => {

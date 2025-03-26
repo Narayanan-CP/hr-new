@@ -7,8 +7,8 @@ interface NotificationPanelProps {
   userRole?: 'hr' | 'employee';
 }
 
-const NotificationPanel: React.FC<NotificationPanelProps> = ({ onClose, userRole = 'employee' }) => {
-  const { notifications, markAllAsRead, markAsRead, getRelevantNotifications } = useNotifications();
+const NotificationPanel: React.FC<NotificationPanelProps> = ({  }) => {
+  const { markAllAsRead, markAsRead, getRelevantNotifications } = useNotifications();
   const { user } = useAuth();
   
   // Get notifications relevant to the current user

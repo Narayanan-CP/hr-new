@@ -71,7 +71,7 @@ const LeaveManagement = () => {
     setShowForm(false);
   };
 
-  const handleStatusChange = (leaveId: string, status: Leave['status'], employeeId: string, employeeName: string, startDate: string, endDate: string) => {
+  const handleStatusChange = (leaveId: string, status: Leave['status'], employeeId: string, _employeeName: string, startDate: string, endDate: string) => {
     updateLeaveStatus(leaveId, status);
     setLeaves(prev => 
       prev.map(leave => 

@@ -3,9 +3,10 @@ import Layout from '../components/Layout';
 import { useAuth } from '../context/AuthContext';
 import { useNotifications } from '../context/NotificationContext';
 import { getSalaries } from '../utils/mockData';
-import { CircleCheck, Clock, DollarSign, Download, X } from 'lucide-react';
+import { CircleCheck, Clock, DollarSign, X } from 'lucide-react';
 import { jsPDF } from 'jspdf';
 import 'jspdf-autotable';
+import { Salary } from '../types';
 
 // Add the autotable types to jsPDF
 declare module 'jspdf' {
@@ -157,18 +158,18 @@ const SalaryManagement = () => {
   // Function to process salary (for HR)
   const processSalary = (salaryId: string, employeeId: string, employeeName: string, month: string, year: string) => {
     // Update the salary status in localStorage
-    const updatedSalaries = salaries.map(salary => {
+    const updatedSalaries: Salary[] = salaries.map(salary => {
       if (salary.id === salaryId) {
         return {
           ...salary,
-          status: 'paid',
+          status: "paid" as "paid",  // Explicitly cast status to match the type
           paymentDate: new Date().toISOString()
         };
       }
       return salary;
     });
     
-    localStorage.setItem('salaries', JSON.stringify(updatedSalaries));
+    localStorage.setItem("salaries", JSON.stringify(updatedSalaries));
     setSalaries(updatedSalaries);
     
     // Notification for HR

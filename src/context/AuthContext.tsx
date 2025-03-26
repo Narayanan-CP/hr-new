@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
-import { AuthState, User, UserRole, Employee } from '../types';
+import { AuthState, User, Employee } from '../types';
 import { initializeData } from '../utils/mockData';
 
 interface AuthContextType extends AuthState {
