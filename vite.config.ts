@@ -62,9 +62,7 @@ export default defineConfig({
                 watermark.target = '_blank';
                 watermark.className = 'srcbook-watermark';
                 watermark.innerHTML = \`
-                  <img src="https://assets.srcbook.com/favicon.svg" alt="Srcbook Logo" />
-                  Made in Srcbook
-                \`;
+                  
                 document.body.appendChild(watermark);
               `,
             },
